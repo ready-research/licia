@@ -38,6 +38,7 @@ exports = function(obj, path, val) {
 
     prop = path.shift();
     while (!isUndef(prop)) {
+        if (typeof prop !== 'string' && typeof prop !== 'number') { prop = String(prop); }
         if (
             prop === '__proto__' ||
             prop === 'constructor' ||
